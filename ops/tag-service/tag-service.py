@@ -90,12 +90,12 @@ def tag_version(bump, service, pre_release):
     elif bump == 'finalize-prerelease':
         bumped = latest_version.finalize_version()
     else:
-        raise Exception('Invalid bump type: {}'.format(bump))
+        raise Exception(f'Invalid bump type: {bump}')
 
     if pre_release:
         bumped = bumped.bump_prerelease()
 
-    new_version = 'v' + str(bumped)
+    new_version = f'v{str(bumped)}'
     new_tag = f'{service}/{new_version}'
 
     log.info(f'Bumped version: {new_version}')
