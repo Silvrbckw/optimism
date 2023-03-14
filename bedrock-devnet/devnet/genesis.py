@@ -25,10 +25,7 @@ GENESIS_TMPL = {
         "grayGlacierBlock": 0,
         "shanghaiBlock": None,
         "cancunBlock": None,
-        'clique': {
-            'period': 3,
-            'epoch': 30000
-        }
+        'clique': {'period': 3, 'epoch': 30000},
     },
     'nonce': '0x0',
     'timestamp': '{:#x}'.format(int(time.time())),
@@ -38,14 +35,12 @@ GENESIS_TMPL = {
     'mixHash': '0x0000000000000000000000000000000000000000000000000000000000000000',
     'coinbase': '0x0000000000000000000000000000000000000000',
     'alloc': {
-        '{:x}'.format(i).ljust(40, '0'): {
-            'balance': '0x1'
-        } for i in range(0, 255)
+        '{:x}'.format(i).ljust(40, '0'): {'balance': '0x1'} for i in range(255)
     },
     'number': '0x0',
     'gasUsed': '0x0',
     'parentHash': '0x0000000000000000000000000000000000000000000000000000000000000000',
-    'baseFeePergas': '0x3B9ACA00'
+    'baseFeePergas': '0x3B9ACA00',
 }
 
 GENESIS_TMPL['alloc'].update({
